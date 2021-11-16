@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import ImageList from './ImageList';
 import Footer from './Footer';
+import Header from './Header';
 
 export const logo = new URL(
   '../public/demo-product.jpg?width=128',
@@ -31,21 +32,7 @@ const ProductBox = () => (
 export default function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            componnerat="div"
-            sx={{
-              flexGrow: 1,
-              textAlign: 'center',
-            }}
-          >
-            Ramazon
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
 
       <Container maxWidth="md">
         <div className="center">

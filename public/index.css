@@ -13,3 +13,12 @@
   /* background: blue; */
   display: none;
 }
+
+a {
+  color: inherit;
+  underline: inherit;
+  text-align: inherit;
+  display: inherit;
+  text-decoration: inherit;
+  box-sizing: inherit;
+}
