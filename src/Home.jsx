@@ -12,6 +12,8 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import ImageList from './ImageList';
 
 export const logo = new URL(
@@ -37,27 +39,31 @@ export default function Home() {
             sx={{
               flexGrow: 1,
               textAlign: 'center',
-              display: { xs: 'none', sm: 'block' },
             }}
           >
             Ramazon
           </Typography>
         </Toolbar>
       </AppBar>
-      <h1> Your one-stop shop to buying all sorts of stuff</h1>
 
-      <div className="center">
-        <p>
-          <TextField
-            label="Find something nice..."
-            type="search"
-            variant="outlined"
-          />
-        </p>
-        <Button variant="contained">Search</Button>
-      </div>
-      <br />
-      <ImageList />
+      <Container maxWidth="md">
+        <div className="center">
+          <Typography variant="h3" component="div" gutterBottom>
+            Your one-stop shop to buying all sorts of stuff
+          </Typography>
+
+          <p>
+            <TextField
+              label="Find something nice..."
+              type="search"
+              variant="outlined"
+            />
+          </p>
+          <Button variant="contained">Search</Button>
+        </div>
+
+        <ImageList />
+      </Container>
     </Box>
   );
 }

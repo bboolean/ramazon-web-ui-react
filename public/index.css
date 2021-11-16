@@ -1,5 +1,7 @@
 .center {
   text-align: center;
+  margin: 50px;
+  margin-bottom: 100px;
 }
 
 .scroll::-webkit-scrollbar {
