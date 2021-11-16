@@ -28,43 +28,25 @@ const ProductBox = () => (
   </Paper>
 );
 
-export default function Home() {
+export default function Footer() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            componnerat="div"
-            sx={{
-              flexGrow: 1,
-              textAlign: 'center',
-            }}
-          >
-            Ramazon
-          </Typography>
-        </Toolbar>
-      </AppBar>
-
-      <Container maxWidth="md">
-        <div className="center">
-          <Typography variant="h3" component="div" gutterBottom>
-            Your one-stop shop to buying all sorts of stuff
-          </Typography>
-
-          <p>
-            <TextField
-              label="Find something nice..."
-              type="search"
-              variant="outlined"
-            />
-          </p>
-          <Button variant="contained">Search</Button>
-        </div>
-
-        <ImageList />
+    <Container
+      maxWidth="xlg"
+      sx={{
+        bgcolor: 'primary.main',
+      }}
+    >
+      <Container maxWidth="md" sx={{ margin: '20px', fontSize: '0.8125rem' }}>
+        <Typography variant="body2" gutterBottom>
+          <b> Links</b>
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Links
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Links
+        </Typography>
       </Container>
-    </Box>
+    </Container>
   );
 }
