@@ -45,49 +45,18 @@ export default function Home() {
         </Toolbar>
       </AppBar>
       <h1> Your one-stop shop to buying all sorts of stuff</h1>
-      {/*<div
-        style={{
-          width: '50vw',
-          marginLeft: '41vw',
-          overflow: 'auto',
-        }}
-        className="scroll"
-      >
-        <Stack
-          direction="row"
-          style={{}}
-          sx={{
-            width: 128,
-            height: 128,
-          }}
-          spacing={3}
-        >
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-        </Stack>
+
+      <div className="center">
+        <p>
+          <TextField
+            label="Find something nice..."
+            type="search"
+            variant="outlined"
+          />
+        </p>
+        <Button variant="contained">Search</Button>
       </div>
-       */}
-      <TextField label="Search field" type="search" variant="outlined" />
-      <Button variant="contained">Hello World</Button>
+      <br />
       <ImageList />
     </Box>
   );

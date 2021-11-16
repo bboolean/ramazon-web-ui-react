@@ -1,3 +1,7 @@
+.center {
+  text-align: center;
+}
+
 .scroll::-webkit-scrollbar {
   /* height: 20px; */
   /* background: blue; */
