@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <Home />
-      <Button variant="contained">Hello World</Button>
     </div>
   );
 }

@@ -1,0 +1,5 @@
+.scroll::-webkit-scrollbar {
+  /* height: 20px; */
+  /* background: blue; */
+  display: none;
+}

@@ -9,6 +9,17 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
+const logo = new URL('../public/demo-product.jpg?width=128', import.meta.url);
+
+const ProductBox = () => (
+  <Paper elevation={4}>
+    <img src={logo} style={{ borderRadius: 4 }} />
+  </Paper>
+);
 
 export default function Home() {
   return (
@@ -30,19 +41,50 @@ export default function Home() {
         </Toolbar>
       </AppBar>
 
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          '& > :not(style)': {
-            m: 1,
+      <div
+        style={{
+          width: '50vw',
+          marginLeft: '41vw',
+          overflow: 'auto',
+        }}
+        className="scroll"
+      >
+        <Stack
+          direction="row"
+          style={{}}
+          sx={{
             width: 128,
             height: 128,
-          },
-        }}
-      >
-        <Paper elevation={3}>What</Paper>
-      </Box>
+          }}
+          spacing={3}
+        >
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+        </Stack>
+      </div>
+
+      <TextField label="Search field" type="search" variant="outlined" />
+
+      <Button variant="contained">Hello World</Button>
     </Box>
   );
 }
