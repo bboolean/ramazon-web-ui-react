@@ -12,8 +12,12 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import ImageList from './ImageList';
 
-const logo = new URL('../public/demo-product.jpg?width=128', import.meta.url);
+export const logo = new URL(
+  '../public/demo-product.jpg?width=128',
+  import.meta.url
+);
 
 const ProductBox = () => (
   <Paper elevation={4}>
@@ -40,8 +44,8 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
-
-      <div
+      <h1> Your one-stop shop to buying all sorts of stuff</h1>
+      {/*<div
         style={{
           width: '50vw',
           marginLeft: '41vw',
@@ -81,10 +85,10 @@ export default function Home() {
           <ProductBox />
         </Stack>
       </div>
-
+       */}
       <TextField label="Search field" type="search" variant="outlined" />
-
       <Button variant="contained">Hello World</Button>
+      <ImageList />
     </Box>
   );
 }
