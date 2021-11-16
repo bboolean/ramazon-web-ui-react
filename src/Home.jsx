@@ -65,6 +65,7 @@ export default function Home() {
 
         <ImageList />
       </Container>
+      <div className="spacer" />
     </Box>
   );
 }

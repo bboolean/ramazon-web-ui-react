@@ -4,6 +4,10 @@
   margin-bottom: 100px;
 }
 
+.spacer {
+  height: 5vw;
+}
+
 .scroll::-webkit-scrollbar {
   /* height: 20px; */
   /* background: blue; */
