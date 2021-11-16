@@ -18,6 +18,7 @@ import Line from './Line';
 import ImageList from './ImageList';
 import Footer from './Footer';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 
 export const logo = new URL(
   '../public/demo-product.jpg?width=128',
@@ -30,7 +31,7 @@ const ProductBox = () => (
   </Paper>
 );
 
-export default function Home() {
+export default function Product() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Header />

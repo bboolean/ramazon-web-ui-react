@@ -22,3 +22,7 @@ a {
   text-decoration: inherit;
   box-sizing: inherit;
 }
+
+a:hover {
+  color: #1976d2;
+}

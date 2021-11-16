@@ -10,6 +10,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Rating from '@mui/material/Rating';
+import { Link } from 'react-router-dom';
 
 export const logo = new URL(
   '../public/demo-product.jpg?width=160',
@@ -30,7 +31,7 @@ export default function Line() {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }} style={{ paddingBottom: 0 }}>
           <Typography component="div" variant="h5">
-            Jeff
+            <Link to="/Product/123/This-Thing">Jeff</Link>
           </Typography>
           <Typography
             variant="subtitle1"
