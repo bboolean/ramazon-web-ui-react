@@ -9,23 +9,12 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 
-function srcset(image, width, height, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${width * cols}&h=${height * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${width * cols}&h=${
-      height * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
-
-export const logo = new URL('../public/cat-category.jpg', import.meta.url);
-
 export default function TitlebarImageList() {
   return (
     <ImageList>
       {itemData.map((item) => (
         <ImageListItem key={item.title}>
-          <img src={logo} alt={item.title} loading="lazy" />
+          <img src={item.image} alt={item.title} loading="lazy" />
           <ImageListItemBar
             title={item.title}
             subtitle={item.author}
@@ -47,26 +36,40 @@ export default function TitlebarImageList() {
 const itemData = [
   {
     title: 'Animals',
+    image: new URL(
+      '../public/categories/animals-category.jpg',
+      import.meta.url
+    ),
   },
   {
     title: 'Cats',
+    image: new URL('../public/categories/cats-category.jpg', import.meta.url),
   },
   {
     title: 'Dogs',
+    image: new URL('../public/categories/dogs-category.jpg', import.meta.url),
   },
   {
     title: 'Buildings',
-  },
-  {
-    title: 'School',
+    image: new URL(
+      '../public/categories/buildings-category.jpg',
+      import.meta.url
+    ),
   },
   {
     title: 'Art',
+    image: new URL('../public/categories/art-category.jpg', import.meta.url),
+  },
+  {
+    title: 'School',
+    image: new URL('../public/categories/school-category.jpg', import.meta.url),
   },
   {
     title: 'Bikes',
+    image: new URL('../public/categories/bikes-category.jpg', import.meta.url),
   },
   {
     title: 'Food',
+    image: new URL('../public/categories/food-category.jpg', import.meta.url),
   },
 ];
