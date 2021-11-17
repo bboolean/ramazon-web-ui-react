@@ -23,6 +23,6 @@ a {
   box-sizing: inherit;
 }
 
-a:hover {
+.hover-blue:hover {
   color: #1976d2;
 }

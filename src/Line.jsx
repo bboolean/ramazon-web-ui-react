@@ -31,7 +31,9 @@ export default function Line() {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }} style={{ paddingBottom: 0 }}>
           <Typography component="div" variant="h5">
-            <Link to="/Product/123/This-Thing">Jeff</Link>
+            <Link to="/Product/123/This-Thing" className="hover-blue">
+              Jeff
+            </Link>
           </Typography>
           <Typography
             variant="subtitle1"
