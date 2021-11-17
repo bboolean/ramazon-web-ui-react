@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import * as React from 'react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
@@ -49,6 +50,9 @@ export default function Product() {
             </Typography>
             <Rating name="read-only" value={3.4} readOnly />
             <br /> <br />
+            <Button variant="contained" style={{ marginRight: 10 }}>
+              Add to Cart
+            </Button>{' '}
             <i>Arrive by Tue</i>
             <p>
               This is a description of how amazing this product is. You need to
