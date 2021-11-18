@@ -12,7 +12,7 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom';
 
-export default function Line({ product }) {
+export default function Line() {
   const theme = useTheme();
 
   return (
@@ -22,7 +22,7 @@ export default function Line({ product }) {
         sx={{ height: 160, width: 160 }}
         image={new URL('../public/demo-product.jpg?width=256', import.meta.url)}
       />
-      {JSON.stringify(product)}
+
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }} style={{ paddingBottom: 0 }}>
           <Typography component="div" variant="h5">

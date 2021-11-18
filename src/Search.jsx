@@ -19,6 +19,7 @@ import ImageList from './ImageList';
 import Footer from './Footer';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const logo = new URL(
   '../public/demo-product.jpg?width=128',
@@ -32,16 +33,15 @@ const ProductBox = () => (
 );
 
 export default function Product() {
+  const products = useSelector((state) => state?.products ?? []);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Header />
 
       <Container maxWidth="md">
-        {[
-          1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-          1,
-        ].map(() => (
-          <Line />
+        {products.map((product) => (
+          <Line product={product} />
         ))}
       </Container>
       <div className="spacer" />

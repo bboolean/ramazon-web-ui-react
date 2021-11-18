@@ -34,7 +34,9 @@ export default function Product() {
       <Container maxWidth="md">
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           <img
-            src={logo}
+            src={
+              new URL('../public/demo-product.jpg?width=256', import.meta.url)
+            }
             style={{ height: '256px', width: '256px', borderRadius: '10px' }}
           />
           <Box sx={{ p: 3 }}>

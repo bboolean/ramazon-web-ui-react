@@ -5,12 +5,16 @@ import Home from './Home';
 import Search from './Search';
 import Product from './Product';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import store from './redux/store';
+import { Provider } from 'react-redux';
 import CssBaseline from '@mui/material/CssBaseline';
+import Counter from './Counter';
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
+      <Counter />
+
       <CssBaseline />
       <BrowserRouter>
         <Routes>
@@ -19,7 +23,7 @@ function App() {
           <Route path="product/*" element={<Product />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </Provider>
   );
 }
 
