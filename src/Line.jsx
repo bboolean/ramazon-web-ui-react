@@ -20,14 +20,18 @@ export default function Line({ product }) {
       <CardMedia
         component="img"
         sx={{ height: 160, width: 160 }}
-        image={new URL('../public/demo-product.jpg?width=256', import.meta.url)}
+        image={
+          new URL(
+            `https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}`,
+            import.meta.url
+          )
+        }
       />
-      {JSON.stringify(product)}
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }} style={{ paddingBottom: 0 }}>
           <Typography component="div" variant="h5">
             <Link to="/Product/123/This-Thing" className="hover-blue">
-              Jeff
+              {product?.title}
             </Link>
           </Typography>
           <Typography
@@ -35,9 +39,9 @@ export default function Line({ product }) {
             color="text.secondary"
             component="div"
           >
-            Bluejay | <span style={{ color: 'green' }}>$4.00</span>
+            Bluejay | <span style={{ color: 'green' }}>{product?.price}</span>
           </Typography>
-          <Rating name="read-only" value={3.4} readOnly />
+          <Rating name="read-only" value={product?.stars} readOnly />
           <br /> <br />
           Arrive by Tue
         </CardContent>

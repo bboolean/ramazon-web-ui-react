@@ -9,6 +9,7 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import CssBaseline from '@mui/material/CssBaseline';
 import Counter from './Counter';
+import './redux/locationChange';
 
 function App() {
   return (
