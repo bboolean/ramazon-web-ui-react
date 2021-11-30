@@ -14,7 +14,7 @@ export default function TitlebarImageList() {
   return (
     <ImageList>
       {itemData.map((item) => (
-        <Link to={'/search/' + item.title}>
+        <Link to={'/search?c=' + item.title}>
           <ImageListItem key={item.title}>
             <img src={item.image} alt={item.title} loading="lazy" />
             <ImageListItemBar

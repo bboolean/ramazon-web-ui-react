@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 import CssBaseline from '@mui/material/CssBaseline';
-import Counter from './Counter';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as R from 'ramda';
@@ -36,8 +35,6 @@ function InnerApp() {
 function App() {
   return (
     <Provider store={store}>
-      <Counter />
-
       <CssBaseline />
       <BrowserRouter>
         <InnerApp />
