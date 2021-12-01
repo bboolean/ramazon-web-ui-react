@@ -42,19 +42,18 @@ export default function Product() {
       <Container maxWidth="md">
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           {product?.image ? (
-            <img
-              src={
-                new URL(
-                  `https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}`,
-                  import.meta.url
-                )
-              }
+            <div
               style={{
-                height: '256px',
-                width: '256px',
+                width: 256,
+                height: 256,
                 borderRadius: '10px',
+                backgroundImage: `url('https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}')`,
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat',
               }}
-            />
+            >
+              <div style={{ width: 256 }}></div>
+            </div>
           ) : (
             <div
               style={{
