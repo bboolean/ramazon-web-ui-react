@@ -9,6 +9,7 @@ export default (action$, state$) =>
   action$.pipe(
     ofType('updatePath'),
     o.filter((action) => R.equals(['search'], action?.object?.path)),
+    o.tap(() => window.scrollTo(0, 0)),
     o.switchMap(() =>
       ajax.getJSON(`https://api-v0.ramazon.snowfox.dev/products`).pipe(
         o.map((object) => object?.d),
@@ -20,3 +21,4 @@ export default (action$, state$) =>
     ),
     o.map((data) => action('getProducts', { products: data }))
   );
+p;
