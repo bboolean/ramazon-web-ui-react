@@ -35,35 +35,37 @@ export default function Product() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Header />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Container maxWidth="md">
-        <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-          {product?.image ? (
-            <div
-              style={{
-                width: 256,
-                height: 256,
-                borderRadius: '10px',
-                backgroundImage: `url('https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}')`,
-                backgroundPosition: 'center center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              <div style={{ width: 256 }}></div>
-            </div>
-          ) : (
-            <div
-              style={{
-                height: 256,
-                width: 256,
-                borderRadius: '10px',
-                background: '#f5f5f5',
-              }}
-            ></div>
-          )}
+      <Container maxWidth="md" sx={{ mt: 12 }}>
+        <Box
+          sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}
+        >
+          <Box sx={{ textAlign: 'center' }}>
+            {product?.image ? (
+              <div
+                style={{
+                  width: 256,
+                  height: 256,
+                  borderRadius: '10px',
+                  backgroundImage: `url('https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}')`,
+                  backgroundPosition: 'center center',
+                  backgroundRepeat: 'no-repeat',
+                  margin: 'auto',
+                }}
+              >
+                <div style={{ width: 256 }}></div>
+              </div>
+            ) : (
+              <div
+                style={{
+                  height: 256,
+                  width: 256,
+                  borderRadius: '10px',
+                  background: '#f5f5f5',
+                  margin: 'auto',
+                }}
+              ></div>
+            )}
+          </Box>
           <Box sx={{ p: 3 }}>
             <Typography component="div" variant="h5">
               {dots(product?.title)}
