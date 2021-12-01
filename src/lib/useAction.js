@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import action from './action';
+import mkAction from './mkAction';
 
 export default () => {
   const dispatch = useDispatch();
 
-  return (...args) => dispatch(action(...args));
+  return (...args) => dispatch(mkAction(...args));
 };

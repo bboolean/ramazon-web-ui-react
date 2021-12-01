@@ -2,7 +2,7 @@ import * as r from 'rxjs';
 import * as o from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 import { ajax } from 'rxjs/ajax';
-import mkAction from '~/src/lib/action';
+import mkAction from '~/src/lib/mkAction';
 import * as R from 'ramda';
 
 export default (action$, state$) =>

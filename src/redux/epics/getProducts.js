@@ -2,7 +2,7 @@ import * as r from 'rxjs';
 import * as o from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 import { ajax } from 'rxjs/ajax';
-import action from '~/src/lib/action';
+import mkAction from '~/src/lib/mkAction';
 import * as R from 'ramda';
 
 export default (action$, state$) =>
@@ -19,6 +19,6 @@ export default (action$, state$) =>
         })
       )
     ),
-    o.map((data) => action('getProducts', { products: data }))
+    o.map((data) => mkAction('getProducts', { products: data }))
   );
 p;
