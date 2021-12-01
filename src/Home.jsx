@@ -18,17 +18,6 @@ import ImageList from './ImageList';
 import Footer from './Footer';
 import Header from './Header';
 
-export const logo = new URL(
-  '../public/demo-product.jpg?width=128',
-  import.meta.url
-);
-
-const ProductBox = () => (
-  <Paper elevation={4}>
-    <img src={logo} style={{ borderRadius: 4 }} />
-  </Paper>
-);
-
 export default function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>

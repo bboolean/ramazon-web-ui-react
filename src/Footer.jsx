@@ -17,17 +17,6 @@ import Container from '@mui/material/Container';
 import ImageList from './ImageList';
 import Footer from './Footer';
 
-export const logo = new URL(
-  '../public/demo-product.jpg?width=128',
-  import.meta.url
-);
-
-const ProductBox = () => (
-  <Paper elevation={4}>
-    <img src={logo} style={{ borderRadius: 4 }} />
-  </Paper>
-);
-
 export default function Footer() {
   return (
     <Container

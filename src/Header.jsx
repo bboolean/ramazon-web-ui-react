@@ -32,13 +32,12 @@ export default function Header() {
             componnerat="div"
             sx={{
               flexGrow: 1,
-              // textAlign: 'center',
             }}
           >
             <Link to="/">Ramazon</Link>
           </Typography>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: 'flex' }}>
             <IconButton size="large" edge="end" color="inherit">
               <ShoppingCartIcon />
             </IconButton>

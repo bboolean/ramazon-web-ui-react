@@ -18,12 +18,6 @@ export const logo = new URL(
   import.meta.url
 );
 
-const ProductBox = () => (
-  <Paper elevation={4}>
-    <img src={logo} style={{ borderRadius: 4 }} />
-  </Paper>
-);
-
 const dots = (i) => (i ? i : '...');
 
 export default function Product() {
