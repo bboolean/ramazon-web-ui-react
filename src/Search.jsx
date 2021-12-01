@@ -5,11 +5,6 @@ import { useSelector } from 'react-redux';
 import Header from './Header';
 import Line from './Line';
 
-export const logo = new URL(
-  '../public/demo-product.jpg?width=128',
-  import.meta.url
-);
-
 export default function Product() {
   const products = useSelector((state) => state?.products ?? []);
 
