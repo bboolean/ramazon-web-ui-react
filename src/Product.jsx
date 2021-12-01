@@ -35,7 +35,7 @@ export default function Product() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Header />
-      <Container maxWidth="md" sx={{ mt: 12 }}>
+      <Container maxWidth="md" sx={{ mt: { xs: 6, sm: 12 } }}>
         <Box
           sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}
         >
