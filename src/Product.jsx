@@ -24,6 +24,8 @@ const ProductBox = () => (
   </Paper>
 );
 
+const dots = (i) => (i ? i : '...');
+
 export default function Product() {
   const path = useSelector((state) => state?.path ?? []);
   const _id = path?.[1] ?? '';
@@ -39,18 +41,33 @@ export default function Product() {
       <br />
       <Container maxWidth="md">
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-          <img
-            src={
-              new URL(
-                `https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}`,
-                import.meta.url
-              )
-            }
-            style={{ height: '256px', width: '256px', borderRadius: '10px' }}
-          />
+          {product?.image ? (
+            <img
+              src={
+                new URL(
+                  `https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}`,
+                  import.meta.url
+                )
+              }
+              style={{
+                height: '256px',
+                width: '256px',
+                borderRadius: '10px',
+              }}
+            />
+          ) : (
+            <div
+              style={{
+                height: 256,
+                width: 256,
+                borderRadius: '10px',
+                background: '#f5f5f5',
+              }}
+            ></div>
+          )}
           <Box sx={{ p: 3 }}>
             <Typography component="div" variant="h5">
-              {product?.title}
+              {dots(product?.title)}
             </Typography>
             <Typography
               variant="subtitle1"
@@ -58,7 +75,7 @@ export default function Product() {
               component="div"
             >
               Bluejay |{' '}
-              <span style={{ color: 'green' }}>${product?.price}</span>
+              <span style={{ color: 'green' }}>${dots(product?.price)}</span>
             </Typography>
             <Rating name="read-only" value={product?.stars} readOnly />
             <br /> <br />
