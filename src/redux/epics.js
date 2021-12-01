@@ -1,7 +1,8 @@
 import { catchError } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import * as R from 'ramda';
-import * as try0 from './epics/try';
+import getProducts from './epics/getProducts';
+import getProduct from './epics/getProduct';
 
 const combineEpics =
   (...epics) =>
@@ -19,6 +20,6 @@ const combineEpics =
       )
     );
 
-const epics = combineEpics(...R.values(try0));
+const epics = combineEpics(getProducts, getProduct);
 
 export default epics;
