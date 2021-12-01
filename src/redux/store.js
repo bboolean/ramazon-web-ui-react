@@ -2,17 +2,18 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createEpicMiddleware } from 'redux-observable';
 import epics from './epics';
+import * as R from 'ramda';
 
 const epicMiddleware = createEpicMiddleware();
 
 export default createStore(
   (state, action) => {
-    if (action?.object) {
-      return { ...state, ...R.omit(['type'], action) };
+    if ('@@INIT' === action?.type) {
+      return state;
     } else if (action?.fn) {
       return action.fn(state);
     } else {
-      return state;
+      return { ...state, ...R.omit(['type'], action) };
     }
   },
   {},
