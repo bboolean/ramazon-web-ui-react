@@ -20,6 +20,7 @@ function InnerApp() {
   React.useEffect(() => {
     action('updatePath', {
       path: R.pipe(R.split('/'), R.drop(1))(location?.pathname),
+      uri: location.pathname,
     });
   }, [location]);
 
@@ -27,7 +28,7 @@ function InnerApp() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="search/*" element={<Search />} />
-      <Route path="product/*" element={<Product />} />
+      <Route path="products/*" element={<Product />} />
     </Routes>
   );
 }

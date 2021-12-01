@@ -8,9 +8,10 @@ import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import * as React from 'react';
-import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
+import { useSelector } from 'react-redux';
+import * as R from 'ramda';
 
 export const logo = new URL(
   '../public/demo-product.jpg?width=256',
@@ -24,6 +25,11 @@ const ProductBox = () => (
 );
 
 export default function Product() {
+  const path = useSelector((state) => state?.path ?? []);
+  const _id = path?.[1] ?? '';
+
+  const product = useSelector((state) => state?.product ?? {});
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Header />
@@ -35,39 +41,32 @@ export default function Product() {
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           <img
             src={
-              new URL('../public/demo-product.jpg?width=256', import.meta.url)
+              new URL(
+                `https://ramazon-product-image.s3.us-east-1.amazonaws.com/product-images-v0/${product?.image}`,
+                import.meta.url
+              )
             }
             style={{ height: '256px', width: '256px', borderRadius: '10px' }}
           />
           <Box sx={{ p: 3 }}>
             <Typography component="div" variant="h5">
-              Jeff
+              {product?.title}
             </Typography>
             <Typography
               variant="subtitle1"
               color="text.secondary"
               component="div"
             >
-              Bluejay | <span style={{ color: 'green' }}>$4.00</span>
+              Bluejay |{' '}
+              <span style={{ color: 'green' }}>${product?.price}</span>
             </Typography>
-            <Rating name="read-only" value={3.4} readOnly />
+            <Rating name="read-only" value={product?.stars} readOnly />
             <br /> <br />
             <Button variant="contained" style={{ marginRight: 10 }}>
               Add to Cart
             </Button>{' '}
             <i>Arrive by Tue</i>
-            <p>
-              This is a description of how amazing this product is. You need to
-              buy 100,000 of this most useful product. This is a description of
-              how amazing this product is. You need to buy 100,000 of this most
-              useful product. This is a description of how amazing this product
-              is. You need to buy 100,000 of this most useful product. This is a
-              description of how amazing this product is. You need to buy
-              100,000 of this most useful product. This is a description of how
-              amazing this product is. You need to buy 100,000 of this most
-              useful product. This is a description of how amazing this product
-              is. You need to buy 100,000 of this most useful product.
-            </p>
+            <p>{product?.Comment}</p>
             <p>Tags: #Animal, #Bird, #BlueJay</p>
           </Box>
         </Box>
