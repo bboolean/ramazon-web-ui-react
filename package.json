@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "parcel build public/index.html"
+    "build": "parcel build public/index.html",
+    "test": "jest",
+    "tw": "jest --watch"
   },
   "author": "",
   "license": "MIT",
@@ -27,6 +29,10 @@
     "rxjs": "^7.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.2",
+    "jest": "^27.4.3",
     "sharp": "^0.29.3"
   }
 }

@@ -8,7 +8,7 @@ const epicMiddleware = createEpicMiddleware();
 export default createStore(
   (state, action) => {
     if (action?.object) {
-      return { ...state, ...action?.object };
+      return { ...state, ...R.omit(['type'], action) };
     } else if (action?.fn) {
       return action.fn(state);
     } else {

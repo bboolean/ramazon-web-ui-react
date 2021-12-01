@@ -1,17 +1,14 @@
+import CssBaseline from '@mui/material/CssBaseline';
+import * as R from 'ramda';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '@mui/material/Button';
-import Home from './Home';
-import Search from './Search';
-import Product from './Product';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import store from './redux/store';
 import { Provider } from 'react-redux';
-import CssBaseline from '@mui/material/CssBaseline';
-import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import * as R from 'ramda';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import useAction from '~/src/lib/useAction.js';
+import Home from './Home';
+import Product from './Product';
+import store from './redux/store';
+import Search from './Search';
 
 function InnerApp() {
   const location = useLocation();

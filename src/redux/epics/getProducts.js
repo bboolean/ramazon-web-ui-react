@@ -8,7 +8,7 @@ import * as R from 'ramda';
 export default (action$, state$) =>
   action$.pipe(
     ofType('updatePath'),
-    o.filter((action) => R.equals(['search'], action?.object?.path)),
+    o.filter((action) => R.equals(['search'], action?.path)),
     o.tap(() => window.scrollTo(0, 0)),
     o.switchMap(() =>
       ajax.getJSON(`https://api-v0.ramazon.snowfox.dev/products`).pipe(

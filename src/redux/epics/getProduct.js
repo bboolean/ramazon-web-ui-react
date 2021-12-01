@@ -8,11 +8,11 @@ import * as R from 'ramda';
 export default (action$, state$) =>
   action$.pipe(
     ofType('updatePath'),
-    o.filter((action) => R.test(/^\/products\/\w+$/, action?.object?.uri)),
+    o.filter((action) => R.test(/^\/products\/\w+$/, action?.uri)),
     o.switchMap((action) =>
       ajax
         .getJSON(
-          `https://api-v0.ramazon.snowfox.dev/products/${action?.object?.path?.[1]}`
+          `https://api-v0.ramazon.snowfox.dev/products/${action?.path?.[1]}`
         )
         .pipe(
           o.map((object) => object?.d?.[0]),

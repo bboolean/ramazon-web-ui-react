@@ -8,8 +8,6 @@ import * as R from 'ramda';
 export default (action$, state$) =>
   action$.pipe(
     ofType('updatePath'),
-    o.filter((action) =>
-      R.not(R.test(/^\/products\/\w+$/, action?.object?.uri))
-    ),
+    o.filter((action) => R.not(R.test(/^\/products\/\w+$/, action?.uri))),
     o.mapTo(mkAction('clearProduct', { product: {} }))
   );
